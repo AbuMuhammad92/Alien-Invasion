@@ -6,15 +6,6 @@ This is Project 1 from the "Python Crash Course" book of the popular arcade game
   <img src="https://raw.githubusercontent.com/frank-quoc/Alien-Invasion/master/images/game_sample.png"  width=80%>
 </div>
 
-## Table of Contents
-1. [Getting Started](README.md#getting-started)
-    * [Prerequisites](README.md#prerequisites)
-    * [Installation](README.md#installation)
-    * [How to run the game](README.md#how-to-run-the-game)
-2. [Game Rules](README.md#game-rules)
-3. [File Descriptions](README.md#file-descriptions)
-4. [Credits](README.md#credits)
-
 ## Getting Started
 Please follow these instructions to download the game and play on your local machine. 
 
