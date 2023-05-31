@@ -84,27 +84,3 @@ destroys the aliens. If the player shoots all the aliens, a new fleet
 appears that moves faster than the previous fleet. If any alien hits 
 the player's ship or reaches the bottom of the screen, the player
 loses a ship. If the player loses three ships, the game ends.
-
-## File Descriptions
----
-File|Task
----|---
-__pycache__ | Folder of bytcode .pyc files
-images | Player's ship, alien ship, and game sample
-alien.py | Alien's sprite and attributes
-alien_invasion.py | Runs the game
-bullet.py | Bullet's sprite and attributes
-button.py | Game's start button attributes
-game_functions.py | Game's settings, including screen, rules, player movement, etc
-game_stats.py | Stats for Alien Invasion
-pygame-1.9.6-cp37-cp37m-win_amd64.whl | Python wrapper module for the SDL multimedia library
-scoreboard.py | Class to report scoreboard info
-settings.py | Class to store all settings for Alien Invasion
-ship.py | Player's ship and attributes
-
-
-## Credits
-
-Made by Frank Ho | [@frank_quoc](https://twitter.com/frank_quoc)
-
-Originally created by [Eric Matthes](https://github.com/ehmatthes/pcc/tree/master/chapter_12)
