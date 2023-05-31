@@ -1,11 +1,12 @@
 import pygame.font
 
+
 class Scoreboard():      
     """Класс для вывода игровой информации."""     
     
     def __init__(self, ai_game):          
         """Инициализирует атрибуты подсчета очков."""          
-        self.ai_game = ai_game
+  
         self.screen = ai_game.screen          
         self.screen_rect = self.screen.get_rect()          
         self.settings = ai_game.settings          
@@ -17,7 +18,21 @@ class Scoreboard():
         
         # Подготовка исходного изображения.        
         self.prep_score()
-       
+        self.prep_high_score()
+     
+    
+    def prep_high_score(self):      
+        """Преобразует рекордный счет в графическое изображение."""     
+        high_score = round(self.stats.high_score, -1)      
+        high_score_str = "{:,}".format(high_score)     
+        self.high_score_image = self.font.render(high_score_str, True,       
+                self.text_color, self.settings.bg_color)      
+        
+        # Рекорд выравнивается по центру верхней стороны.      
+        self.high_score_rect = self.high_score_image.get_rect()    
+        self.high_score_rect.centerx = self.screen_rect.centerx     
+        self.high_score_rect.top = self.score_rect.top
+
     def prep_score(self):          
         """Преобразует текущий счет в графическое изображение."""         
         rounded_score = round(self.stats.score, -1)     
@@ -30,9 +45,16 @@ class Scoreboard():
         self.score_rect.right = self.screen_rect.right - 20         
         self.score_rect.top = 20
 
+    def check_high_score(self):    
+        """Проверяет, появился ли новый рекорд."""    
+        if self.stats.score > self.stats.high_score:        
+            self.stats.high_score = self.stats.score        
+            self.prep_high_score()
 
 
     def show_score(self):    
         """Выводит очки, уровень и количество кораблей на экран.""" 
         self.screen.blit(self.score_image, self.score_rect)
-      
+        self.screen.blit(self.high_score_image, self.high_score_rect)
+
+     
